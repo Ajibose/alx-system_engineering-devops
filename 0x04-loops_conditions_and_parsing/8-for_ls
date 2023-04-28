@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # The content of the current directory In a list format
 
-filename=$(ls $(pwd) | cut -d '-' -f 2)
-printf "%s\n" $filename
+filename=$(find . | cut -d '-' -f 2)
+printf "%s\n" "$filename"
