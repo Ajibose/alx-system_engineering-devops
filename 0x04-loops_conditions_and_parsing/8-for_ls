@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # The content of the current directory In a list format
 
-for line in $(ls $PWD)
+for line in *
 do
-	echo ${line#*-} # echo "${line//*-/}" also works
+	echo "${line#*-}" # echo "${line//*-/}" also works
 done
