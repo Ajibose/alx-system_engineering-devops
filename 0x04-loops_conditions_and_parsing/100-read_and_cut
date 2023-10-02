@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # displays the username, user id, Home directory path for the user of /etc/passwd
 
-while IFS=":" read username x uid gid gecos home shell;
+while IFS=":" read -r username x uid gid gecos home shell;
 do
-	echo "$username:$uid:$home"
+	x=''
+	gid=''
+	gecos=''
+	shell=''
+	echo "$username:$uid:$home$x$gid$gecos$shell"
 done < /etc/passwd
