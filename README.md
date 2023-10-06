@@ -1,1 +1,1 @@
-0x00. Shell, basics
+0x07. Networking basics #0
