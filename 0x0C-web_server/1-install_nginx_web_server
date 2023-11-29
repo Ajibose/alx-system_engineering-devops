@@ -6,10 +6,7 @@ apt-get -y install nginx
 sudo utf allow 'Nginx HTTP'
 
 # serve hello world when configured 
-custom_message="Hello World!"
-nginx_config="/etc/nginx/sites-available/default"
-sudo sed -i '/location \/ {/a \\t\treturn 200 "'"$custom_message"'";' "$nginx_config"
-
+echo 'Hello World' | sudo tee /var/www/html/index.nginx-debian.html
 # restart nginx
 sudo service nginx restart
 
