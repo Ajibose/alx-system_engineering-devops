@@ -9,5 +9,5 @@ utf allow 'Nginx HTTP'
 # serve hello world when configured 
 echo 'Hello World!' > /var/www/html/index.nginx-debian.html
 # restart nginx
-service nginx restart
+service nginx start
 
