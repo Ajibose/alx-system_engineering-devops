@@ -4,4 +4,3 @@ apt-get -y update
 apt-get -y install nginx
 service nginx start
 cd /var/www/html
-echo 'Hello World!' > index.html
