@@ -9,4 +9,4 @@ echo "Hello World!" > /var/www/html/index.html
 str="rewrite ^\/redirect_me https:\/\/www.google.com permanent;"
 sed -i "/server_name _;/s/.*/&\n\t$str/" /etc/nginx/sites-enabled/default
 
-service nginx restart
+service nginx start
