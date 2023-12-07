@@ -6,7 +6,7 @@ ufw allow 'Nginx HTTP'
 echo "Hello World!" > /var/www/html/index.html
 
 #permanent redirection
-str="rewrite ^\/redirect_me https:\/\/www.google.com permanent;"
+str="location \/redirect_me {\n\t\treturn 301 https:\/\/www.google.com;\n\t}"
 sed -i "/server_name _;/s/.*/&\n\t$str/" /etc/nginx/sites_enabled/default
 
 service nginx restart
