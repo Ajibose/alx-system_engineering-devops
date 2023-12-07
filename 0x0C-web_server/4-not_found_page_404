@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# Install nginx web server
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+
+#permanent redirection
+str="rewrite ^\/redirect_me https:\/\/www.google.com permanent;"
+sed -i "/server_name _;/s/.*/&\n\t$str/" /etc/nginx/sites-enabled/default
+
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+str="error_page 404 custom_404.html\n\tlocation = \/custom_404.html {\n\t\troot \/var\/www\/html;\n\t\tinternal;\n\t}"
+sed -i "/server_name _;/s/.*/&\n\t$str/" /etc/nginx/sites-enabled/default
+service nginx start
