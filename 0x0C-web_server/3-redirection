@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# Install nginx web server
+apt-get -y update
+apt-get -y install nginx
+ufw allow 'Nginx HTTP'
+echo "Hello World!" > /var/www/html/index.html
+
+#permanent redirection
+str="rewrite ^\/redirect_me https:\/\/www.google.com"
+sed -i "/server_name_;/s/.*/&\n\t$str" /etc/nginx/sites_enabled/default
+
+service nginx restart
