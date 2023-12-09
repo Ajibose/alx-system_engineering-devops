@@ -2,3 +2,4 @@
 # Install and configure Apache
 
 echo "ServerName localhost" >> /etc/apache2.conf
+echo 'Hello Holberton' > /var/www/html/index.html
