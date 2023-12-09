@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Install and configure Apache
+
+echo "ServerName localhost" >> /etc/apache2.conf
