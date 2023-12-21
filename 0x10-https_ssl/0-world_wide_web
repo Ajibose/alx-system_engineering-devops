@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# 
+web_information () {
+	ans_sec=$(dig "$2"."$1" | awk '/^;; ANSWER SECTION:/{flag=1; next} flag && NF {print $0; exit}')
+	read -r ip record <<< "$(echo "$ans_sec" | awk '{print $(NF), $(NF - 1); exit}')"
+	echo "The subdomain $2 is a $record record and points to $ip"
+}
+
+if [ -z "$2" ]; then
+	web_information "$1" www
+	web_information "$1" lb-01
+	web_information "$1" web-01
+	web_information "$1" web-02
+else
+	web_information "$1" "$2"
+fi
