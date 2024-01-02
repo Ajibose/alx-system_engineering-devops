@@ -2,8 +2,8 @@
 """
     Retrieve data from API
 """
-import requests
 import json
+import requests
 
 
 def retrieve_todo(emp_id):
