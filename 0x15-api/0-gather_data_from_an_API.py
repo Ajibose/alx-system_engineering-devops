@@ -24,9 +24,10 @@ def retrieve_todo(emp_id):
             completedList.append(todo.get("title"))
     completedTask = len(completedList)
 
-    print("Employee {} is done with tasks({}/{}):\n\t"
-           .format( emp_name, completedTask, totalTasks),
-            "\n\t ".join(completedList)) 
+    print("Employee {} is done with tasks({}/{}):\n\t".format(
+        emp_name, completedTask, totalTasks),
+        "\n\t ".join(completedList))
+
 
 if __name__ == "__main__":
     import sys
