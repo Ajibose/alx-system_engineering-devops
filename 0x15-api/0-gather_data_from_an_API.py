@@ -4,6 +4,7 @@
 """
 import json
 import requests
+import sys
 
 
 def retrieve_todo(emp_id):
@@ -30,13 +31,12 @@ def retrieve_todo(emp_id):
 
 
 if __name__ == "__main__":
-    import sys
-    if len(sys.argv) < 2:
-        sys.exit()
+    """if len(sys.argv) < 2:
+        sys.exit()"""
 
     emp_id = sys.argv[1]
 
-    if type(eval(emp_id)) != int:
-        sys.exit()
+    """if type(eval(emp_id)) != int:
+        sys.exit()"""
 
     retrieve_todo(emp_id)
