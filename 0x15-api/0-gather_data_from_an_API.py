@@ -20,7 +20,7 @@ def retrieve_todo(emp_id):
     totalTasks = len(todo_list)
     completedList = []
     for todo in todo_list:
-        if todo['completed'] is True:
+        if todo.get('completed') is True:
             completedList.append(todo.get("title"))
     completedTask = len(completedList)
 
