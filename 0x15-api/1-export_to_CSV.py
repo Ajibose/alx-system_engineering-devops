@@ -2,6 +2,7 @@
 """
     Retrieve data from API
 """
+import csv
 import json
 import requests
 import sys
@@ -21,7 +22,11 @@ def retrieve_todo(emp_id):
         todo_list = r.json()
         writer = csv.writer(f)
         for todo in todo_list:
-            csvLine = f'"{emp_id}"' + f'"{emp_name}"' + f'"{todo.get("title")}"'
+            emp_id = str(emp_id)
+            emp_name = str(emp_name)
+            completed_str = str(todo.get("completed")).capitalize()
+            title_str = str(todo.get("title"))
+            csvLine = [emp_id, emp_name, completed_str, title_str]
             writer.writerow(csvLine)
 
 
