@@ -28,8 +28,14 @@ def retrieve_todo():
         todos = r.json()
         for todo in todos:
             userId = todo.get('userId')
-            allTasks[f"{userId}"].append({"username": f"{usersDict[f'{userId}']}", "task": f"{todo.get('title')}", "completed": todo.get('completed')})
+            allTasks[
+                    f"{userId}"].append({
+                        "username": f"{usersDict[f'{userId}']}",
+                        "task": f"{todo.get('title')}",
+                        "completed": todo.get('completed')
+                        })
         json.dump(allTasks, f)
+
 
 if __name__ == "__main__":
     """if len(sys.argv) < 2:
