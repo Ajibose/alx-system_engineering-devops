@@ -21,7 +21,7 @@ def retrieve_todo():
             f"https://jsonplaceholder.typicode.com/todos/")
 
     allTasks = {}
-    for userId, user in usersDict:
+    for userId in usersDict.keys():
         allTasks[f"{userId}"] = []
 
     with open(f"todo_all_employees.json", "w", newline='') as f:
