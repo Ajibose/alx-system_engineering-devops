@@ -20,13 +20,9 @@ def retrieve_todo(emp_id):
 
     with open(f"{emp_id}.csv", "w", newline='') as f:
         todo_list = r.json()
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for todo in todo_list:
-            emp_id = str(emp_id)
-            emp_name = str(emp_name)
-            completed_str = str(todo.get("completed")).capitalize()
-            title_str = str(todo.get("title"))
-            csvLine = [emp_id, emp_name, completed_str, title_str]
+            csvLine = [emp_id, emp_name, todo.get("completed"), todo.get("title")]
             writer.writerow(csvLine)
 
 
