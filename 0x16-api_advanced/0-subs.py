@@ -9,8 +9,8 @@ def number_of_subscribers(subreddit):
     import requests
     import sys
     base_url = "https://www.reddit.com"
-    endpoint = f"/r/{sys.argv[1]}/about.json"
+    endpoint = f"/r/{subreddit}/about.json"
     response = requests.get(base_url + endpoint, headers={'user-agent': 'Alx'})
     if response.status_code == 404:
         return 0
-    return response.json()["data"]["subscribers"]
+    return response.json().get("data").get("subscribers")
