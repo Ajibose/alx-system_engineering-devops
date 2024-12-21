@@ -1,1 +1,2 @@
-Prints the working directory
+List all the contents in the directory
+
