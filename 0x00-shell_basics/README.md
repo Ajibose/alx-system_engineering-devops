@@ -7,3 +7,4 @@ Change directory name
 Move a file
 Delete a file
 Delete a directory from the tmp directory
+Change working directory to the previous one
