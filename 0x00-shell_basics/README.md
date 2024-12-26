@@ -5,3 +5,4 @@ List all the contents in the directory
 List all the contents in the directory including hidden files
 Change directory name
 Move a file
+Delete a file 
