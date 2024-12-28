@@ -10,3 +10,4 @@ Delete a directory from the tmp directory
 Change working directory to the previous one
 Display all the contents in the directory in long format
 Prints the type of file
+Create a symbolic link
